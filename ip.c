@@ -8,21 +8,18 @@ int ver(int num);
 
 int main(int agrc, char *argv[]){
     setlocale(LC_ALL, "Portuguese");
-    int i, t;
+    int i;
 
     printf("digite um número para vermos se ele é par ímpar: ");
     scanf("%d", &i);
 
-    t = ver(i);
-    
+    ver(i);
+    return 0;
 
 }
 
 int ver(int num){
     if(num % 2 == 0){
-        printf("par\n");
-    }
-    else if(num == 0){
         printf("par\n");
     }
     else {
