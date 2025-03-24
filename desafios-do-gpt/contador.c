@@ -4,23 +4,30 @@
 #include <string.h>
 #include <locale.h>
 
-int very(int num, int cont);
+int very(int num);
 
 int main(int argc, char *argv[]){
     setlocale(LC_ALL, "Portuguese");
     int i;
-    int c = 0;
 
     printf("digite um número: ");
     scanf("%d", &i);
 
-    very(i,c);
-    printf("%d", c);
+    int c = very(i);
+    printf("o número tem %d dígitos.\n", c);
 }
 
-int very(int num, int cont){
-    while(num > 0){
-        num/10;
-        cont++;
+int very(int num){
+    int cont = 0;
+
+    if(num < 10 && num > -1){
+        return 1;
+    }
+    else {
+        while(num > 0){
+            num /= 10;
+            cont++;
+        }
+        return cont;
     }
 }
