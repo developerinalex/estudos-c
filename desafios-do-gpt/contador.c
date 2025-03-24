@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
+#include <stdlib.h>
 
 int very(int num);
 
@@ -15,19 +16,18 @@ int main(int argc, char *argv[]){
 
     int c = very(i);
     printf("o número tem %d dígitos.\n", c);
+
+    return 0;
 }
 
 int very(int num){
     int cont = 0;
+    num = abs(num);
 
-    if(num < 10 && num > -1){
-        return 1;
-    }
-    else {
-        while(num > 0){
-            num /= 10;
-            cont++;
-        }
-        return cont;
-    }
+    do{
+        num /= 10;
+        cont++;
+    } while(num > 0);
+    
+    return cont;
 }
