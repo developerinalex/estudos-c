@@ -7,26 +7,27 @@ int invertor(int num);
 int main(int argc, char *argv[]){
     setlocale(LC_ALL, "Portuguese");
 
-    int n;
+    int n, resultado;
 
     printf("Digite um número inteiro: ");
     scanf("%d", &n);
 
-    invertor(n);
+    resultado = invertor(n);
+    printf("o inverso do seu número é: %d\n", resultado);
     return 0;
 }
 
 
 int invertor(int num){
+    int sinal = (num < 0) ? -1 : 1;
     num = abs(num);
-    int x = 0;
-    int y = 0;
+    int x = 0, y;
 
     while(num > 0){
         y = num % 10;
         x = x * 10 + y;
-        num = (num - (num % 10)) /10;
+        num /= 10;
     }
 
-    printf("%d\n", x);
+    return x * sinal;
 }
