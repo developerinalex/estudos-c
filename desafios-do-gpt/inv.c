@@ -22,10 +22,10 @@ int invertor(int num){
     int x = 0;
     int y;
 
-    do{
+    while(num > 0){
         y = num % 10;
-        x *= 10 + y;
-    }while(num > 0);
+        x * 10 + y;
+    }
 
     return x;
 }
