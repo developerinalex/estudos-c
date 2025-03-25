@@ -20,12 +20,13 @@ int main(int argc, char *argv[]){
 int invertor(int num){
     num = abs(num);
     int x = 0;
-    int y;
+    int y = 0;
 
     while(num > 0){
         y = num % 10;
-        x * 10 + y;
+        x = x * 10 + y;
+        num = (num - (num % 10)) /10;
     }
 
-    return x;
+    printf("%d\n", x);
 }
