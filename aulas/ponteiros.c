@@ -5,12 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void display(int var, int *ptr);
-void update(int *p);
+void display(int var, int* ptr);
+void update(int* p);
 
 int main(){
     int var = 15;
-    int *ptr;
+    int* ptr;
 
     ptr = &var;
 
@@ -24,7 +24,7 @@ int main(){
     return 0;
 }
 
-void display(int var, int *ptr){
+void display(int var, int* ptr){
     printf("\n\n");
     printf("conteudo: %d\n", var);
     printf("endereço: %p\n", &var);
@@ -33,6 +33,6 @@ void display(int var, int *ptr){
     printf("endereço do ponteiro: %p\n", &ptr);
 }
 
-void update(int *p){
+void update(int* p){
     *p = *p+1;
 }
