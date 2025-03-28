@@ -3,33 +3,27 @@
 #include <string.h>
 #include <stdlib.h>
 
-char palin(char p);
+char verify(char n);
 
-int main(int argc, char *argv[]){
+int main(){
     setlocale(LC_ALL, "Portuguese");
 
-    char input[101];
-    printf("Vamos verificar se a sua frase ou palavra é um Palíndromo. Vocẽ tem um limite de 100 caracteres!\n Digite aqui: ");
-    scanf("%100[^\n]", input);
+    char jazz[101], result;
 
-    char verify;
+    printf("digite algo: ");
+    scanf("%101[^\n], jazz");
 
-    verify = palin(input);
+    result = verify(jazz);
+
+    return 0;
 }
 
-char palin(char p){
-    int in = strlen(p);
-    int i = 0;
-    char on[101], result[101] = p;
-
-    for(i = 0; i < in; i++){
-        result[101] = on[101];
+char verify(char n){
+    int palin, i = strlen(n);
+    char ver[101];
+    char *ptr = ver;
+    for(i = 0; i < palin; i++){
+        ptr = n % 10;
     }
-
-    if(result == p){
-        printf("%s", result);
-    }
-    else{
-        printf("A palavra não é um palíndromo.");
-    }
+    return n;
 }
